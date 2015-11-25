@@ -1,5 +1,5 @@
 var React = require('react-native');
-var api = require('../Utils/api');
+var api = require('../utils/api');
 var Dashboard = require('./Dashboard');
 
 var {
@@ -15,13 +15,12 @@ var styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
     padding: 30,
-    marginTop: 65,
     flexDirection: 'column',
     justifyContent: 'center',
     backgroundColor: '#48BBEC'
   },
   title: {
-    marginBottom: 20,
+    marginBottom: 10,
     fontSize: 25,
     textAlign: 'center',
     color: '#fff'
@@ -53,6 +52,10 @@ var styles = StyleSheet.create({
     alignSelf: 'stretch',
     justifyContent: 'center'
   },
+  notFound: {
+    color: 'white',
+    textAlign: 'center'
+  }
 });
 
 class Main extends React.Component{
@@ -96,12 +99,13 @@ class Main extends React.Component{
   }
   render() {
     var showErr = (
-      this.state.error ? <Text> {this.state.error} </Text> : <View></View>
+      this.state.error ? <Text style={styles.notFound}> {this.state.error} </Text> : <View></View>
     );
 
     return(
       <View style={styles.mainContainer}>
       <Text style={styles.title}> Search for a Github User </Text>
+      {showErr}
       <TextInput
         style={styles.searchInput}
         value={this.state.username}
@@ -114,9 +118,8 @@ class Main extends React.Component{
         </TouchableHighlight>
         <ActivityIndicatorIOS
           animating={this.state.isLoading}
-          color="#111"
+          color="#fff"
           size="large"></ActivityIndicatorIOS>
-        {showErr}
       </View>
       )
   }

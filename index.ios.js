@@ -1,7 +1,7 @@
 'use strict';
 
 var React = require('react-native');
-var Main = require('./App/Components/Main');
+var Main = require('./app/components/Main');
 
 
 var {
@@ -25,7 +25,7 @@ class DavetoxaReactNative extends React.Component{
       <NavigatorIOS
         style={styles.container}
         initialRoute={{
-          title: 'Github Notetaker',
+          title: 'Github',
           component: Main
         }} />
     );

@@ -4,7 +4,7 @@
 ##### Bundle app
 ``` react-native bundle --platform=ios --entry-file=index.ios.js --bundle-output=mainBundle ```
 
-##### Running with ```react-native 0.19```
+##### Running with ```react-native 0.20```
 
 
 ###### Run from terminal in iOS simulator

@@ -10,7 +10,7 @@ var styles = StyleSheet.create({
   container: {
   },
   text: {
-    color: 'Red'
+    color: 'red'
   }
 });
 
